@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Logo from "../static/logo.png";
 import { FiBookmark } from "react-icons/fi";
+import Link from "next/link";
 
 const styles = {
   wrapper: `max-w-[46rem] h-[10rem] flex items-center gap-[1rem] cursor-pointer`,
@@ -20,45 +21,47 @@ const styles = {
 
 const PostCard = () => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.postDetails}>
-        {/*       Author section */}
-        <div className={styles.authorContainer}>
-          <div className={styles.authorImageContainer}>
-            <Image
-              src={Logo}
-              className={styles.authorImage}
-              width={40}
-              height={40}
-              alt="author image"
-            />
+    <Link href={`/post/123`}>
+      <div className={styles.wrapper}>
+        <div className={styles.postDetails}>
+          {/*       Author section */}
+          <div className={styles.authorContainer}>
+            <div className={styles.authorImageContainer}>
+              <Image
+                src={Logo}
+                className={styles.authorImage}
+                width={40}
+                height={40}
+                alt="author image"
+              />
+            </div>
+            <div className={styles.authorName}>Om Jaju</div>
           </div>
-          <div className={styles.authorName}>Om Jaju</div>
+
+          <h1 className={styles.title}>
+            🚀 Your Roadmap to Web Development Mastery: From Zero to Pro 🌟
+          </h1>
+          <div className={styles.briefing}>
+            Part 1: Introduction to Web Development and Front-End Fundamentals
+          </div>
+
+          {/*  Details section */}
+          <div className={styles.detailsContainer}>
+            <span className={styles.articleDetails}>
+              9 Sepetember • 20 min read •{" "}
+              <span className={styles.category}>productivity</span>
+            </span>
+            <span className={styles.bookmarkContainer}>
+              <FiBookmark className="h-5 w-5" />
+            </span>
+          </div>
         </div>
 
-        <h1 className={styles.title}>
-          🚀 Your Roadmap to Web Development Mastery: From Zero to Pro 🌟
-        </h1>
-        <div className={styles.briefing}>
-          Part 1: Introduction to Web Development and Front-End Fundamentals
-        </div>
-
-        {/*  Details section */}
-        <div className={styles.detailsContainer}>
-          <span className={styles.articleDetails}>
-            9 Sepetember • 20 min read •{" "}
-            <span className={styles.category}>productivity</span>
-          </span>
-          <span className={styles.bookmarkContainer}>
-            <FiBookmark className="h-5 w-5" />
-          </span>
+        <div className={styles.thumbnailContainer}>
+          <Image height={100} width={100} src={Logo} alt="Thumbnail" />
         </div>
       </div>
-
-      <div className={styles.thumbnailContainer}>
-        <Image height={100} width={100} src={Logo} alt="Thumbnail" />
-      </div>
-    </div>
+    </Link>
   );
 };
 
