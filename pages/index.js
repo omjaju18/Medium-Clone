@@ -1,3 +1,11 @@
+import Banner from "@/components/Banner";
+import Header from "@/components/Header";
+
 export default function Home() {
-  return <h1>Hey Ommie</h1>;
+  return (
+    <>
+      <Header />
+      <Banner />
+    </>
+  );
 }
