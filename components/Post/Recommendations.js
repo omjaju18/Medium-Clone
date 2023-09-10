@@ -3,7 +3,10 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { MdMarkEmailUnread } from "react-icons/md";
 
 import Om from "../../static/om.jpg";
+import Author from "../../static/author.jpg";
+import Blog from "../../static/blog 1.avif";
 import Web from "../../static/web.avif";
+import MyBack from "../../static/Myback.jpeg";
 
 const styles = {
   wrapper: `h-screen min-w-[10rem] max-w-[30rem] flex-[1.2] p-[2rem]`,
@@ -61,32 +64,39 @@ const Recommendations = () => {
         <div className={styles.recommendationContainer}>
           <div className={styles.title}>More from Medium</div>
           <div className={styles.articlesContainer}>
-            <div className={styles.articleContentWrapper}>
-              <div className={styles.articleContent}>
-                <div className={styles.recommendationAuthorContainer}>
-                  <div
-                    className={styles.recommendationAuthorProfileImageContainer}
-                  >
-                    <Image src={Om} alt="Om" height={100} width={100} />
+            {recommendedPosts.map((post) => (
+              <div key={post.id} className={styles.articleContentWrapper}>
+                <div className={styles.articleContent}>
+                  <div className={styles.recommendationAuthorContainer}>
+                    <div
+                      className={
+                        styles.recommendationAuthorProfileImageContainer
+                      }
+                    >
+                      <Image
+                        src={post.author.image}
+                        alt="author"
+                        height={100}
+                        width={100}
+                      />
+                    </div>
+                    <div className={styles.recommendationAuthorName}>
+                      {post.author.name}
+                    </div>
                   </div>
-                  <div className={styles.recommendationAuthorName}>Om Jaju</div>
+                  <div className={styles.recommendationTitle}>{post.title}</div>
                 </div>
-
-                <div className={styles.recommendationTitle}>
-                  🚀 Your Roadmap to Web Development Mastery: From Zero to Pro
-                  🌟
+                <div className={styles.recommendationThumbnailContainer}>
+                  <Image
+                    className={styles.recommendationThumbnail}
+                    src={post.image}
+                    alt="thumbnail"
+                    height={100}
+                    width={100}
+                  />
                 </div>
               </div>
-              <div className={styles.recommendationThumbnailContainer}>
-                <Image
-                  className={styles.recommendationThumbnail}
-                  src={Web}
-                  alt="Web Devlopement"
-                  height={100}
-                  width={100}
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </>
@@ -95,3 +105,30 @@ const Recommendations = () => {
 };
 
 export default Recommendations;
+
+const recommendedPosts = [
+  {
+    title: "Introducing OJ: Navigating Uncertainty with Tech and Passion🚀",
+    image: Blog,
+    author: {
+      name: "OJ",
+      image: Om,
+    },
+  },
+  {
+    title: "Things they don't tell you",
+    image: MyBack,
+    author: {
+      name: "Shivaay Kohli ",
+      image: Author,
+    },
+  },
+  {
+    title: "🚀 Your Roadmap to Web Development Mastery: From Zero to Pro 🌟",
+    image: Web,
+    author: {
+      name: "OJ",
+      image: Om,
+    },
+  },
+];
