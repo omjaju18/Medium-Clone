@@ -7,6 +7,8 @@ import { HiOutlineLink } from "react-icons/hi";
 import { BiBookmarks } from "react-icons/bi";
 import { FiMoreHorizontal } from "react-icons/fi";
 
+import { getDownloadURL, ref } from "firebase/storage";
+
 import Om from "../../static/om.jpg";
 import Blog from "../../static/blog 1.avif";
 import Thumbnail from "../../static/thumbnail.webp";
@@ -29,7 +31,8 @@ const styles = {
   subtitle: `font-mediumSerifItalic text-[1.4rem] text-[#292929]`,
   articleText: `font-mediumSerif text-[1.4rem] text-[#292929]`,
 };
-const ArticleMain = () => {
+const ArticleMain = ({ post, author }) => {
+  console.log(post, author, "⚒️");
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -45,9 +48,18 @@ const ArticleMain = () => {
               />
             </div>
             <div className={styles.column}>
-              <div>Om Jaju</div>
+              <div>{author?.data?.name}</div>
               <div className={styles.postDetails}>
-                <span>September 2 • 10 min read </span> •
+                <span>
+                  {" "}
+                  {new Date(post?.data?.postedOn).toLocaleString("en-US", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}{" "}
+                  • {post?.data?.postLength}{" "}
+                </span>{" "}
+                •
                 <span className={styles.listenButton}>
                   <AiFillPlayCircle />
                   Listen
@@ -71,27 +83,27 @@ const ArticleMain = () => {
         {/* Article  */}
         <div className={styles.articleMainContainer}>
           <div className={styles.bannerContainer}>
-            <Image src={Blog} alt="banner" height={600} width={600} />
+            <Image
+              src={post?.data?.bannerImage}
+              alt="banner"
+              height={600}
+              width={600}
+            />
           </div>
-          <h1 className={styles.title}>
-            Introducing OJ: Navigating Uncertainty with Tech and Passion🚀
-          </h1>
+          <h1 className={styles.title}>{post?.data?.title}</h1>
           <h4 className={styles.subtitle}>
-            <div>Om Jaju , September 2 , 2023</div>
             <div>
-              Brirf: Exploring the Tech Universe: A Journey through Web
-              Development, Cybersecurity, and Beyond
+              {" "}
+              {author?.data?.name},{" "}
+              {new Date(post?.data?.postedOn).toLocaleString("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
             </div>
+            <div>{post?.data?.brief}</div>
           </h4>
-          <div className={styles.articleText}>
-            👋 Hello, Tech Enthusiasts! I'm Om Jaju, and I'm thrilled to have
-            you here on "OJ," my corner of the internet where technology,
-            passion, and creativity collide. Today, I want to take you on a
-            journey through my tech-filled life, from my beginnings as a B.Tech
-            student specializing in Electronics and Computer Engineering to my
-            current role as a passionate tech enthusiast. Join me as we explore
-            my love for ReactJS, front-end development, cybersecurity, and more.
-          </div>
+          <div className={styles.articleText}>{post?.data?.body}</div>
         </div>
       </div>
     </div>
