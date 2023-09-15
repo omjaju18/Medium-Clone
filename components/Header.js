@@ -1,5 +1,29 @@
 import Image from "next/image";
 import Logo from "../static/logo.png";
+import { useRouter } from "next/router";
+import { useContext, useState } from "react";
+import { MediumContext } from "@/context/MediumContext";
+import Link from "next/link";
+import Modal from "react-modal";
+import UploadModal from "./UploadModal";
+
+Modal.setAppElement("#__next");
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "#fff",
+    padding: 0,
+    border: "none",
+  },
+  overlay: {
+    backgroundColor: "rgba(10, 11, 13, 0.75)",
+  },
+};
 
 const styles = {
   wrapper: `flex justify-center gap-10 p-5 bg-[#FCC017]`,
@@ -11,6 +35,10 @@ const styles = {
 };
 
 const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+  const { currentUser, handleUserAuth } = useContext(MediumContext);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -26,10 +54,33 @@ const Header = () => {
         <div className={styles.bannerNav}>
           <div>Our Story</div>
           <div>Membership</div>
-          <div>Sign In</div>
-          <div className={styles.accentedButton}>Get Started</div>
+          {/* USER */}
+          {currentUser ? (
+            <>
+              <Link href={"/?addNew=1"}>
+                <div className={styles.accentedButton}>Write</div>
+              </Link>
+              <div className={styles.accentedButton}>
+                <div>Get unlimited access</div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div onClick={handleUserAuth}>Sign In</div>
+              <div onClick={handleUserAuth} className={styles.accentedButton}>
+                <div>Get Started</div>
+              </div>
+            </>
+          )}
         </div>
       </div>
+      <Modal
+        isOpen={!!router.query.addNew}
+        onRequestClose={() => router.push("/")}
+        style={customStyles}
+      >
+         <UploadModal /> 
+      </Modal>
     </div>
   );
 };
