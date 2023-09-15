@@ -18,7 +18,7 @@ export default function Home() {
     <div className={styles.wrapper}>
       <Head>
         <title>Medium Clone | OJ</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/medium logo.png" />
       </Head>
       <Header />
       <Banner />

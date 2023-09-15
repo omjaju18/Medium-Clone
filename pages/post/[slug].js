@@ -16,16 +16,28 @@ const Post = () => {
   const [author, setAuthor] = useState();
 
   useEffect(() => {
-    setPost(posts.find((post) => post.id === router.query.slug));
-    
-    setAuthor(users.find((user) => user.id === post?.data?.author));
-  }, [post]);
+    // Check if posts and users data are available
+    if (posts && users) {
+      const foundPost = posts.find((post) => post.id === router.query.slug);
+      const foundAuthor = users.find(
+        (user) => user.id === foundPost?.data?.author
+      );
+
+      setPost(foundPost);
+      setAuthor(foundAuthor);
+    }
+  }, [posts, users, router.query.slug]);
+
+  // Add conditional rendering for when data is not available yet
+  if (!post || !author) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
       <Head>
         <title>Medium | OJ</title>
-        <link rel="icon" href="/static/logo.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.content}>
         <ReadersNav />
