@@ -8,12 +8,12 @@
   <p>
 Medium Clone with NEXT.JS! (ReactJS, NextJS,Redux, Firebase (Google Authentication, Cloudinary))
   </p>
-  <br />
-</div>
+  <br />   
+</div> 
 
  <h2> 
-   <a href="https://mediumclone-oj.netlify.app/" target="_blank> Live Site </a>
- </h2>  
+   <a href="https://mediumclone-oj.netlify.app/">Live Site</a>
+ </h2>
 
 <h2>
   ScreenShots
