@@ -1,38 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<div align="center">
+  <img src="https://github.com/omjaju18/Medium-Clone/assets/113230517/cca3111f-d087-4eed-a5f9-28273bf3adea" width='300' alt="logo" />
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+  # Medium Clone with NEXT.JS!
+  
+  <p>
+Medium Clone with NEXT.JS! (ReactJS, NextJS,Redux, Firebase (Google Authentication, Cloudinary))
+  </p>
+  <br />
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ <h2> 
+   <a href="https://mediumclone-oj.netlify.app/" target="_blank> Live Site </a>
+ </h2>  
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<h2>
+  ScreenShots
+</h2>  
+<div style="display: flex" align="center"><br>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<a href="https://mediumclone-oj.netlify.app/" target="_blank"><img width="946" alt="Threads Profile Page" src="https://github.com/omjaju18/Medium-Clone/assets/113230517/8ddf6ae5-1b79-4be9-9299-8c16ea410747"></a>
+<a href="https://mediumclone-oj.netlify.app/" target="_blank"> <img width="950" alt="Threads Search" src="https://github.com/omjaju18/Medium-Clone/assets/113230517/cccceb1e-53cf-41c8-913c-d9af2c1a8426"></a>
+<a href="https://mediumclone-oj.netlify.app/" target="_blank"> <img width="956" alt="Threads Create Thread" src="https://github.com/omjaju18/Medium-Clone/assets/113230517/cbf729b3-5eec-48a2-8a76-cc54a7c63935"></a>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+</div>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Teach Stack Used:
+1. Next.JS
+2. ReactJS
+3. Firebase
+4. Cloudinary
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+🔐 Integrated Google authentication through Firebase for user sign-in, ensuring a secure and convenient login process.
 
-## Deploy on Vercel
+- 🔄 Implemented real-time post creation and updates, utilizing Firebase Firestore to store all posts. This real-time functionality ensures that users can seamlessly interact with and stay updated on the latest content.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🌐 Created a fully responsive website, ensuring that users can access and enjoy the Medium clone from various devices and screen sizes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## :handshake: Contact
+
+Your Name - [@Linkedin_handle](https://www.linkedin.com/in/-omjaju/) -https://www.linkedin.com/in/-omjaju/
+
+Project Link: [https://github.com/omjaju18/Medium-Clone](https://github.com/omjaju18/Medium-Clone)
+
+
+
+<div align="center">Don't forget to leave a star ⭐️</div>
+
