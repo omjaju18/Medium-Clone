@@ -37,7 +37,7 @@ Medium Clone with NEXT.JS! (ReactJS, NextJS,Redux, Firebase (Google Authenticati
 
 ## Features:
 
-🔐 Integrated Google authentication through Firebase for user sign-in, ensuring a secure and convenient login process.
+- 🔐 Integrated Google authentication through Firebase for user sign-in, ensuring a secure and convenient login process.
 
 - 🔄 Implemented real-time post creation and updates, utilizing Firebase Firestore to store all posts. This real-time functionality ensures that users can seamlessly interact with and stay updated on the latest content.
 
