@@ -20,10 +20,16 @@ Medium Clone with NEXT.JS! (ReactJS, NextJS,Redux, Firebase (Google Authenticati
 </h2>  
 
 <div style="display: flex" align="center"><br>
-  
+
+  <h3 style="display: flex" align="left"> Home Page </h3>
 <a href="https://mediumclone-oj.netlify.app/" target="_blank"><img width="946" alt="Threads Profile Page" src="https://github.com/omjaju18/Medium-Clone/assets/113230517/8ddf6ae5-1b79-4be9-9299-8c16ea410747"></a>
-<br />
+  <br />   
+    <br /> 
+    <h3 style="display: flex" align="left"> Post creation Section </h3>
 <a href="https://mediumclone-oj.netlify.app/" target="_blank"> <img width="950" alt="Threads Search" src="https://github.com/omjaju18/Medium-Clone/assets/113230517/cccceb1e-53cf-41c8-913c-d9af2c1a8426"></a>
+  <br />   
+    <br /> 
+    <h3 style="display: flex" align="left"> Blog Page </h3>
 <a href="https://mediumclone-oj.netlify.app/" target="_blank"> <img width="956" alt="Threads Create Thread" src="https://github.com/omjaju18/Medium-Clone/assets/113230517/cbf729b3-5eec-48a2-8a76-cc54a7c63935"></a>
 
 </div>
